@@ -1,0 +1,232 @@
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: Arial;
+  font-weight: 400;
+}
+body{
+  width: 100%;
+  height: 100vh;
+  background: #222222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tabsPanel{
+  width: 900px;
+  height: 400px;
+  background: #111111;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px 0 #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.tabsPanel-links{
+  display: flex;
+  background: #191919;
+}
+.tabsPanel-links a{
+  padding: 10px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 4px solid transparent;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 25px;
+}
+.tabsPanel-links a.active{
+  text-shadow: 0 0 10px #ffffff;
+  border-bottom-color: #ffffff;
+}
+.tabsPanel-content{
+  width: 100%;
+  height: 100%;
+  border: 1px solid red;
+  position: relative;
+}
+.tabsPanel-content__item{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  background: #464646;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.5s;
+  column-gap: 30px;
+}
+.tabsPanel-content__item.active{
+  opacity: 1;
+  z-index: 1;
+}
+/* arrowClock */
+.arrowClock{
+  width: 300px;
+  height: 300px;
+  background: #111111;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.arrowClock-number{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.arrowClock-number__num{
+  position: absolute;
+  font-size: 18px;
+  font-weight: 700;
+}
+.num3{right: 15px;}
+.num6{bottom: 15px;}
+.num9{left: 15px;}
+.num12{top: 15px;}
+
+.arrowClock-number__arr{
+  width: 6px;
+  height: 100%;
+  /* background: green; */
+  position: absolute;
+}
+.arrowClock-number__arr::before,
+.arrowClock-number__arr::after{
+  width: 100%;
+  height: 15px;
+  border-radius: 4px;
+  background: #ffffff;
+  box-shadow: 0 0 5px 0 #ffffff;
+  position: absolute;
+  content: '';
+}
+.arrowClock-number__arr::before{top: 15px;}
+.arrowClock-number__arr::after{bottom: 15px;}
+.num1-7{transform: rotate(30deg);}
+.num2-8{transform: rotate(60deg);}
+.num4-10{transform: rotate(120deg);}
+.num5-11{transform: rotate(150deg);}
+
+.arrS{
+  width: 2px;
+  height: 100%;
+  /* background: green; */
+  /* transform: rotate(60deg); */
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.arrS::before{
+  width: 100%;
+  height: 47%;
+  position: absolute;
+  content: '';
+  background: red;
+  border-radius: 200% 200% 2px 2px;
+  top: 18px;
+}
+.arrS::after{
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  background: red;
+  border-radius: 50%;
+  content: '';
+}
+.arrM,
+.arrH{
+  width: 6px;
+  height: 100%;
+  /* background: green; */
+  position: absolute;
+}
+/* .arrM{
+  transform: rotate(30deg);
+} */
+.arrM::before{
+  width: 100%;
+  height: 40%;
+  border: 2px solid yellow;
+  position: absolute;
+  content: '';
+  box-sizing: border-box;
+  border-radius: 10px;
+  top: 30px;
+}
+.arrH::before{
+  width: 100%;
+  height: 30%;
+  border: 2px solid yellow;
+  position: absolute;
+  content: '';
+  box-sizing: border-box;
+  border-radius: 10px;
+  top: 60px;
+}
+/* numberClock */
+.numberClock{
+  padding: 10px;
+  border-radius: 15px;
+  background: #111111;
+  display: flex;
+  column-gap: 20px;
+}
+.numberClock-number{
+  padding: 5px;
+  background: #464646;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 5px;
+  font-size: 20px;
+  position: relative;
+}
+.numberClock-number span{
+  padding: 10px;
+  width: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: 700;
+  background: #191919;
+  border-radius: 5px;
+}
+.numberH::before,
+.numberH::after,
+.numberM::before,
+.numberM::after{
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  content: '';
+  border-radius: 50%;
+  background: #ffffff;
+  right: -15px;
+  animation: opacity 1s linear infinite;
+}
+.numberH::before,
+.numberM::before{
+  top: 30px;
+}
+.numberH::after,
+.numberM::after{
+  bottom: 30px;
+}
+@keyframes opacity {
+  0%{opacity: 0;}
+  50%{opacity: 1;}
+  100%{opacity: 0;}
+}
